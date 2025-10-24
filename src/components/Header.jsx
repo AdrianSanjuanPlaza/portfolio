@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { BsSun, BsMoon } from 'react-icons/bs';
 import logo_black from '../assets/logo_sin_fondo_negro.png'
@@ -30,13 +30,13 @@ function header() {
             height='auto'/></Navbar.Brand>
         
         <div className="d-flex align-items-center justify-items-end">
-            <Button variant={isDarkMode ? "outline-light" : "outline-light"} onClick={toggleTheme} className="me-2">
-                {isDarkMode ? <BsSun size={20} /> : <BsMoon size={20} />}
-            </Button>
-        </div>
-
-        <Navbar.Toggle aria-controls="basic-navbar-nav" bg="dark" />
+          <Button variant={isDarkMode ? "outline-light" : "outline-dark"} onClick={toggleTheme} className="me-2">
+              {isDarkMode ? <BsSun size={20} /> : <BsMoon size={20} />}
+          </Button>
         
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav" bg={isDarkMode ? "dark" : "light"} />
+        </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#inicio">Inicio</Nav.Link>
